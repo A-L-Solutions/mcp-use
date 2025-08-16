@@ -28,6 +28,8 @@ dependencies = [
     "python-dotenv>=1.0.0",
     "posthog>=4.8.0",
     "scarf-sdk>=0.1.0",
+    "langgraph>=0.2",
+    "typing_extensions",
 ]
 
 [project.optional-dependencies]

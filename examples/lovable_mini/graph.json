@@ -1,0 +1,20 @@
+{
+  "start": "router",
+  "limits": { "global_steps": 30, "global_seconds": 240 },
+  "human_approval_after": ["coder"],
+  "agents": {
+    "router": { "type": "rule", "max_steps": 1 },
+    "planner":  { "allow_tools": ["browser.search","browser.open"], "max_steps": 6 },
+    "ux":       { "allow_tools": [], "max_steps": 4 },
+    "coder":    { "allow_tools": ["fs.mkdir","fs.write","fs.read"], "max_steps": 8 },
+    "verifier": { "allow_tools": ["fs.read"], "max_steps": 4 }
+  },
+  "edges": [
+    ["router","planner"],
+    ["planner","ux"],
+    ["ux","coder"],
+    ["coder","verifier"],
+    ["verifier","END"],
+    ["verifier","coder"]
+  ]
+}
