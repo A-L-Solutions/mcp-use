@@ -1,0 +1,7 @@
+{
+  "llm": { "provider": "openai", "model": "gpt-4o-mini" },
+  "servers": [
+    { "name": "browser", "type": "stdio", "cmd": "npx", "args": ["@mcp/cli", "playwright"] },
+    { "name": "fs", "type": "stdio", "cmd": "npx", "args": ["@mcp/cli", "filesystem", "--root=./out"] }
+  ]
+}
